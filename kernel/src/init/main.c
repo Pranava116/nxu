@@ -1,28 +1,24 @@
-#define UART_BASE   0x9000000ULL
+// kernel/src/init/main.c
+#include "drivers/uart/pl011.h"
+#include "arch/arm64/exceptions.h"
 
-#define UARTDR      (*(volatile unsigned int *)(UART_BASE + 0x00))
-#define UARTFR      (*(volatile unsigned int *)(UART_BASE + 0x18))
-#define UARTCR      (*(volatile unsigned int *)(UART_BASE + 0x30))
+extern void *vectors;
 
-#define UARTFR_TXFF (1U << 5)
+void kernel_main(void)
+{
+    uart_init();
 
-static void uart_putc(char c) {
-    while (UARTFR & UARTFR_TXFF) {}
-    UARTDR = c;
-}
+    /* Install exception vectors */
+    asm volatile("msr VBAR_EL1, %0" : : "r"(&vectors) : "memory");
+    asm volatile("dsb sy; isb" ::: "memory");
 
-static void uart_puts(const char *s) {
-    while (*s) uart_putc(*s++);
-}
+    uart_puts("NXU kernel initialized\r\n");
+    uart_puts("Exception vectors installed\r\n");
 
-void kernel_main(void) {
-    // Enable TX (minimal)
-    UARTCR = (1U << 8);  // TXE = 1
+    uart_puts("Triggering a deliberate data abort for testing...\r\n");/
 
-    uart_puts("NXU ALIVE\r\n");
-
-    // If no output → infinite nop loop (QEMU CPU usage ~100%)
+    /* We should never reach here */
     while (1) {
-        asm volatile("nop; nop; nop; nop" ::: "memory");
+        asm volatile("wfi" ::: "memory");
     }
 }

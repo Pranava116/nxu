@@ -11,7 +11,11 @@ CFLAGS  = -Wall -O2 -ffreestanding -nostdlib \
 
 LDFLAGS = -nostdlib
 
-OBJS    = boot/arm64/start.o kernel/src/init/main.o
+OBJS = boot/arm64/start.o \
+       kernel/src/init/main.o \
+       drivers/uart/pl011.o \
+       kernel/src/arch/arm64/entry.o \
+       kernel/src/arch/arm64/exceptions.o
 
 all: nxu.bin
 
