@@ -13,11 +13,10 @@ void kernel_main(void)
     asm volatile("dsb sy; isb" ::: "memory");
 
     uart_puts("NXU kernel initialized\r\n");
-    uart_puts("Exception vectors installed\r\n");
+    uart_puts("Exception vectors installed successfully\r\n");
 
-    uart_puts("Triggering a deliberate data abort for testing...\r\n");/
+    uart_puts("System ready.\r\n");
 
-    /* We should never reach here */
     while (1) {
         asm volatile("wfi" ::: "memory");
     }
