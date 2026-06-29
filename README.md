@@ -1,6 +1,6 @@
-}
 
-NXU
+
+**NXU Not eXactly Unix**
 
 Rethinking operating systems from first principles.
 
@@ -10,7 +10,7 @@ Our goal isn’t to replace existing operating systems. Our goal is to question 
 
 ⸻
 
-Philosophy
+**Philosophy**
 
 Every subsystem in NXU begins with a simple question:
 
@@ -28,7 +28,7 @@ This philosophy guides every engineering decision.
 
 ⸻
 
-Core Principles
+**Core Principles**
 
 * First-principles engineering
 * Privacy-first architecture
@@ -40,7 +40,7 @@ Core Principles
 
 ⸻
 
-Current Status
+**Current Status**
 
 Boot
 
@@ -62,7 +62,7 @@ In Progress
 
 ⸻
 
-Upcoming Milestones
+**Upcoming Milestones**
 
 Phase 1 — Kernel Foundation
 
@@ -90,7 +90,7 @@ Phase 4 — Networking
 
 ⸻
 
-Why NXU?
+**Why NXU?**
 
 Modern operating systems have evolved over decades to support countless hardware platforms and workloads.
 
@@ -104,7 +104,7 @@ Both outcomes are valuable.
 
 ⸻
 
-Contributing
+**Contributing**
 
 NXU welcomes people who enjoy learning.
 
@@ -123,7 +123,7 @@ Great systems are built by communities—not individuals.
 
 ⸻
 
-Project Status
+**Project Status**
 
 NXU is currently an early-stage research project under active development.
 
@@ -133,7 +133,7 @@ Expect frequent changes as ideas evolve and implementations improve.
 
 Founder
 
-Alexander
+**Alexander**
 
 Founder, NXU Project
 
