@@ -2,8 +2,9 @@
 
 **NXU Not eXactly Unix**
 
-Rethinking operating systems from first principles.
+Rethinking operating systems from first # NXU
 
+An open-source research operating system for ARM64 exploring first-principles systems engineering, privacy-first computing, and capability-based security.
 
 Our goal isn’t to replace existing operating systems. Our goal is to question long-standing assumptions, understand the fundamental constraints of computing, and build a privacy-first, security-first system through thoughtful engineering.
 
