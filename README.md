@@ -1,6 +1,6 @@
 # NXU Kernel
 
-**NXU: Not X Unix**
+**NXU: Not eXactly Unix**
 
 A clean-slate, from-scratch ARM64 kernel built as the foundation for a security-first mobile operating system.
 
