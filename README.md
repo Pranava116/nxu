@@ -1,60 +1,84 @@
 
+**NXU - Not eXactly Unix**
 
-**NXU Not eXactly Unix**
+Rethinking operating systems from first principles.
 
-Rethinking operating systems from first # NXU
+NXU is an open-source research operating system for ARM64 exploring how modern computing could be designed if we started today.
 
-An open-source research operating system for ARM64 exploring first-principles systems engineering, privacy-first computing, and capability-based security.
+Rather than accepting decades of existing design decisions, NXU begins by asking why each subsystem exists before deciding how it should be implemented.
 
-Our goal isn’t to replace existing operating systems. Our goal is to question long-standing assumptions, understand the fundamental constraints of computing, and build a privacy-first, security-first system through thoughtful engineering.
+The objective is not to replace existing operating systems.
+
+The objective is to better understand them, challenge assumptions where appropriate, and build a system through careful engineering, openness, and continuous learning.
 
 ⸻
 
 **Philosophy**
 
-Every subsystem in NXU begins with a simple question:
+Every subsystem in NXU starts with one question:
 
-Why does this exist?
+What problem are we solving?
 
 Instead of asking:
 
-“How does another operating system implement this?”
+“How does Linux implement this?”
 
-we ask:
+NXU asks:
 
-“What problem is this subsystem solving, and what is the best design for NXU?”
+“Why is this subsystem necessary? What constraints created it? Is there a simpler or more appropriate design for NXU?”
 
-This philosophy guides every engineering decision.
+Sometimes the answer will be identical to existing operating systems.
+
+Sometimes it won’t.
+
+Either outcome is valuable.
+
+Engineering decisions should be driven by understanding—not imitation.
 
 ⸻
 
-**Core Principles**
+**Engineering Principles**
 
-* First-principles engineering
-* Privacy-first architecture
+* First-principles systems engineering
+* Privacy-first computing
 * Capability-based security exploration
 * Simplicity over unnecessary complexity
-* Open development
 * Transparent design decisions
 * Learn in public
+* Build with the community
+
+⸻
+
+**Project Goals**
+
+NXU aims to explore:
+
+* Modern operating system architecture
+* Secure and understandable kernel design
+* Capability-oriented security models
+* Privacy-conscious networking concepts
+* Modular subsystem design
+* Long-term maintainability
+* Open engineering discussions
+
+This is a long-term research project focused on learning, experimentation, and thoughtful implementation.
 
 ⸻
 
 **Current Status**
 
-Boot
+Kernel Foundation
+
+Completed
 
 * ✅ ARM64 boot sequence
 * ✅ Kernel entry point
 * ✅ Linker configuration
-
-Hardware
-
 * ✅ PL011 UART driver
 * ✅ Serial console output
 * ✅ Exception vector setup
 
-In Progress
+Currently Working On
 
 * 🚧 Generic Timer
 * 🚧 Timer Interrupts
@@ -62,81 +86,141 @@ In Progress
 
 ⸻
 
-**Upcoming Milestones**
+**Roadmap**
 
-Phase 1 — Kernel Foundation
+Phase 1 — Foundation
 
 * Timer Interrupts
 * Physical Memory Manager
-* Basic Kernel Heap
+* Kernel Heap
+* Basic Debug Infrastructure
+
+⸻
 
 Phase 2 — Core Kernel
 
 * Scheduler
 * Virtual Memory
 * Process Management
+* System Calls
+
+⸻
 
 Phase 3 — System Services
 
 * Filesystem
 * Userspace
-* System Calls
+* ELF Loader
+
+⸻
 
 Phase 4 — Networking
 
 * Network Stack
-* Capability-based Networking
+* Capability-based Networking Research
 * Secure Communication
 
 ⸻
 
-**Why NXU?**
+Phase 5 — Developer Platform
 
-Modern operating systems have evolved over decades to support countless hardware platforms and workloads.
+* SDK
+* Documentation
+* Testing Infrastructure
+* Hardware Support
 
-NXU is an opportunity to revisit operating system design from first principles, studying every subsystem before deciding how it should exist.
+⸻
 
-Sometimes that journey will lead to the same solutions used today.
+**Current Focus**
 
-Sometimes it won’t.
+The immediate objective is simple:
 
-Both outcomes are valuable.
+Build a stable kernel foundation before introducing additional complexity.
+
+Each subsystem is designed, implemented, documented, and understood before moving to the next milestone.
+
+Progress is intentionally incremental.
+
+⸻
+
+**Repository Structure**
+
+boot/          Boot process
+kernel/        Core kernel
+drivers/       Hardware drivers
+include/       Kernel headers
+docs/          Technical documentation
+tools/         Development tools
+
+⸻
+
+**Documentation**
+
+Every subsystem should answer four questions:
+
+1. Why does it exist?
+2. What problem does it solve?
+3. How does NXU implement it?
+4. What improvements are planned?
+
+Documentation is considered part of the implementation.
 
 ⸻
 
 **Contributing**
 
-NXU welcomes people who enjoy learning.
+NXU welcomes contributors who enjoy learning.
 
-You don’t have to be a kernel expert.
+You do not need prior kernel development experience.
 
-Contributions are welcome in:
+Contributions are welcome in areas such as:
 
 * Documentation
 * Architecture discussions
 * Kernel development
+* Driver development
 * Testing
 * Tooling
 * Design reviews
 
-Great systems are built by communities—not individuals.
+Curiosity, thoughtful discussion, and respectful collaboration are valued more than experience.
 
 ⸻
 
 **Project Status**
 
-NXU is currently an early-stage research project under active development.
+NXU is an early-stage research operating system under active development.
 
-Expect frequent changes as ideas evolve and implementations improve.
+Interfaces, architecture, and implementation details may evolve as understanding improves.
+
+This repository documents that journey openly.
 
 ⸻
 
-Founder
+**Vision**
 
-**Alexander**
+Computing has evolved through decades of engineering decisions.
+
+NXU exists to revisit those decisions from first principles.
+
+Not to reject the past.
+
+But to understand it deeply enough to build thoughtfully for the future.
+
+⸻
+
+**Founder**
+
+Alexander
 
 Founder, NXU Project
 
 Building in public.
+
 Learning in public.
-Engineering from first principles
+
+Engineering from first principles.
+
+⸻
+
+*“Reality defines the constraints. Engineering designs the solution.”
