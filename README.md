@@ -1,73 +1,142 @@
-# NXU Kernel
+}
 
-**NXU: Not eXactly Unix**
+NXU
 
-A clean-slate, from-scratch ARM64 kernel built as the foundation for a security-first mobile operating system.
+Rethinking operating systems from first principles.
 
-### Vision
-NXU is designed from first principles to create a fundamentally more secure mobile platform.  
-No Linux heritage. No ambient authority. No persistent privileges.  
+NXU is an open-source research operating system exploring how modern computing could be designed if we started today.
 
-Permissions are strictly ephemeral — valid only for the lifetime of a task or session — and enforced directly by the kernel.
+Our goal isn’t to replace existing operating systems. Our goal is to question long-standing assumptions, understand the fundamental constraints of computing, and build a privacy-first, security-first system through thoughtful engineering.
 
-### Core Principles
-- Built entirely from scratch with security as the central invariant
-- Native ARM64 target for modern mobile hardware
-- Minimal and auditable codebase
-- Open-core development model
+⸻
 
-### Current Status (March 2026)
-- Bare-metal AArch64 kernel successfully boots on QEMU `-M virt`
-- Reliable PL011 UART console output from C code
-- Proper assembly entry point with stack setup and .bss zeroing
-- Clean, reproducible build system
+Philosophy
 
-We have reached the first major milestone: a working kernel that executes C code and produces visible output.
+Every subsystem in NXU begins with a simple question:
 
-### Quick Start
+Why does this exist?
 
-# Clone the repository
-git clone https://github.com/AlexanderRamancha/nxu.git
-cd nxu
+Instead of asking:
 
-# Build and run in QEMU
-make clean
-make qemu
+“How does another operating system implement this?”
 
-**Expected output:**
+we ask:
 
-NXU kernel initialized
+“What problem is this subsystem solving, and what is the best design for NXU?”
 
-**Requirements:**
+This philosophy guides every engineering decision.
 
-aarch64-linux-gnu-gcc and binutils-aarch64-linux-gnu
-QEMU (qemu-system-aarch64)
+⸻
 
-**Why Contribute to NXU?**
-Modern mobile security still rests on decades-old kernel foundations.
-NXU offers a chance to build something cleaner, more auditable, and deliberately secure from the ground up.
-If you are interested in low-level systems programming, ARM64 architecture, or building a more secure foundation for mobile devices, you are welcome here.
+Core Principles
 
-**How to Contribute**
-See CONTRIBUTING.md for details on:
+* First-principles engineering
+* Privacy-first architecture
+* Capability-based security exploration
+* Simplicity over unnecessary complexity
+* Open development
+* Transparent design decisions
+* Learn in public
 
-Development workflow
-Coding style
-Submitting patches
+⸻
 
-We especially welcome students and developers who want hands-on experience with bare-metal ARM64 kernel development.
-Documentation
+Current Status
 
-Architecture Overview
-Boot Process
+Boot
 
-**License**
-Licensed under the MIT License (open-core model).
-See LICENSE for full details.
+* ✅ ARM64 boot sequence
+* ✅ Kernel entry point
+* ✅ Linker configuration
 
-Security should not be added as a layer.
-It should be the foundation.
-— The NXU Project
-We are building the kernel that mobile devices deserve.
+Hardware
 
-**Join us.**
+* ✅ PL011 UART driver
+* ✅ Serial console output
+* ✅ Exception vector setup
+
+In Progress
+
+* 🚧 Generic Timer
+* 🚧 Timer Interrupts
+* 🚧 Tick Counter
+
+⸻
+
+Upcoming Milestones
+
+Phase 1 — Kernel Foundation
+
+* Timer Interrupts
+* Physical Memory Manager
+* Basic Kernel Heap
+
+Phase 2 — Core Kernel
+
+* Scheduler
+* Virtual Memory
+* Process Management
+
+Phase 3 — System Services
+
+* Filesystem
+* Userspace
+* System Calls
+
+Phase 4 — Networking
+
+* Network Stack
+* Capability-based Networking
+* Secure Communication
+
+⸻
+
+Why NXU?
+
+Modern operating systems have evolved over decades to support countless hardware platforms and workloads.
+
+NXU is an opportunity to revisit operating system design from first principles, studying every subsystem before deciding how it should exist.
+
+Sometimes that journey will lead to the same solutions used today.
+
+Sometimes it won’t.
+
+Both outcomes are valuable.
+
+⸻
+
+Contributing
+
+NXU welcomes people who enjoy learning.
+
+You don’t have to be a kernel expert.
+
+Contributions are welcome in:
+
+* Documentation
+* Architecture discussions
+* Kernel development
+* Testing
+* Tooling
+* Design reviews
+
+Great systems are built by communities—not individuals.
+
+⸻
+
+Project Status
+
+NXU is currently an early-stage research project under active development.
+
+Expect frequent changes as ideas evolve and implementations improve.
+
+⸻
+
+Founder
+
+Alexander
+
+Founder, NXU Project
+
+Building in public.
+Learning in public.
+Engineering from first principles
