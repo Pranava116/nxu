@@ -4,7 +4,6 @@
 
 Rethinking operating systems from first principles.
 
-NXU is an open-source research operating system exploring how modern computing could be designed if we started today.
 
 Our goal isn’t to replace existing operating systems. Our goal is to question long-standing assumptions, understand the fundamental constraints of computing, and build a privacy-first, security-first system through thoughtful engineering.
 
