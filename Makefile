@@ -11,11 +11,13 @@ CFLAGS  = -Wall -O2 -ffreestanding -nostdlib \
 
 LDFLAGS = -nostdlib
 
-OBJS = boot/arm64/start.o \
-       kernel/src/init/main.o \
-       drivers/uart/pl011.o \
-       kernel/src/arch/arm64/entry.o \
-       kernel/src/arch/arm64/exceptions.o
+# Dynamically find all C and Assembly source files
+C_SRCS   = $(shell find boot kernel drivers -name "*.c")
+ASM_SRCS = $(shell find boot kernel drivers -name "*.S")
+
+# Generate object file lists
+OBJS = $(C_SRCS:.c=.o) $(ASM_SRCS:.S=.o)
+DEPS = $(OBJS:.o=.d)
 
 all: nxu.bin
 
@@ -32,9 +34,7 @@ nxu.bin: nxu.elf
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJS) nxu.elf nxu.bin
-
-# ... your existing variables and rules ...
+	rm -f $(OBJS) $(DEPS) nxu.elf nxu.bin
 
 qemu: nxu.bin
 	# Use cortex-a57 for better reliability in some Debian/QEMU setups
@@ -47,4 +47,19 @@ qemu: nxu.bin
 	  -serial mon:stdio \
 	  -kernel nxu.bin
 
-.PHONY: all clean qemu
+qemu-gdb: nxu.bin
+	# Same as qemu but waits for GDB to connect on port 1234 (-s -S)
+	qemu-system-aarch64 \
+	  -M virt \
+	  -cpu cortex-a57 \
+	  -smp 1 \
+	  -m 512M \
+	  -nographic \
+	  -serial mon:stdio \
+	  -kernel nxu.bin \
+	  -s -S
+
+# Include generated dependency files
+-include $(DEPS)
+
+.PHONY: all clean qemu qemu-gdb
