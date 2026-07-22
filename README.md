@@ -205,21 +205,24 @@ NXU exists to revisit those decisions from first principles.
 
 Not to reject the past.
 
-But to understand it deeply enough to build thoughtfully for the future.
+But to understand it deeply enough to build thoughtfully for the better computing.
 
-⸻
+**About The Founder**
 
-**Founder**
+**Hi, I'm Alexander Ramancha** 👋
 
-Alexander
+A passionate **computer enthusiast** deeply fascinated by low-level systems and first-principles thinking. Currently learning and building **NXU** from scratch on ARM64 architecture to understand operating systems at a fundamental level.
 
-Founder, NXU Project
+My journey is driven by curiosity and the desire to combine strong technical foundations with ambitious startup thinking — creating something meaningful that can eventually grow into a sustainable open-source driven project focused on secure and efficient computing.
 
-Building in public.
+- Background: Self-taught explorer of systems programming
+- Interests: OS development, ARM64, Rust, embedded systems, and the philosophy of engineering
+- Currently learning: Kernel internals, assembly, memory management, and safe systems design
+- Vision: Build in public, learn deeply, share the journey, and create real impact
 
-Learning in public.
+Excited to connect with fellow enthusiasts, learners, and experienced developers who love deep technical discussions and thoughtful system design.
 
-Engineering from first principles.
+**Reach out** if you want to discuss OS concepts, contribute, or explore collaboration opportunities!
 
 ⸻
 
